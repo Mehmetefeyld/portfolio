@@ -360,4 +360,33 @@ section {
 section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Navbar ile ilgili tüm kodları kaldırıyorum */
+body {
+  background-color: #fef6e4;
+  color: #001858;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Ana içerik için margin-left'i kaldırıyorum */
+.main-content {
+  padding: 2rem;
 } 
