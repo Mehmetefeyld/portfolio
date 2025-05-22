@@ -75,20 +75,27 @@ section {
   main {
     margin-left: 0;
     padding: 1rem;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   section {
     padding: 2rem 0;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .container {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     min-height: calc(100vh - 4rem);
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .section-title {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    text-align: left;
   }
 }
 
@@ -162,6 +169,12 @@ ul li {
 ul li:hover {
   transform: scale(1.05);
   color: #f582ae;
+}
+
+@media (max-width: 768px) {
+  ul li {
+    text-align: left;
+  }
 }
 
 /* Animasyon için IntersectionObserver kullanılacak */
