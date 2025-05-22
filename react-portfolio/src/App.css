@@ -22,8 +22,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--light-bg);
   color: var(--text-dark);
-  margin: 0;
-  padding: 0;
 }
 
 .App {
@@ -40,17 +38,12 @@ main {
 section {
   min-height: 100vh;
   padding: 6rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  width: 100%;
 }
 
 .section-title {
@@ -69,6 +62,11 @@ section {
 
   section {
     padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .section-title {
@@ -137,6 +135,18 @@ section {
   color: var(--text-dark);
 }
 
+/* Liste öğeleri için yumuşak geçiş animasyonu */
+ul li {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+ul li:hover {
+  transform: scale(1.05);
+  color: #f582ae;
+}
+
 /* Animasyon için IntersectionObserver kullanılacak */
 @keyframes fadeInUp {
   from {
@@ -173,18 +183,6 @@ h2 {
   margin-bottom: 20px;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
-}
-
-/* Liste öğeleri için yumuşak geçiş animasyonu */
-ul li {
-  margin: 10px 0;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-ul li:hover {
-  transform: scale(1.05); /* Hover animasyonu */
-  color: #f582ae; /* Açık pembe tonu */
 }
 
 /* Navbar için arka plan ve konumlandırma */
