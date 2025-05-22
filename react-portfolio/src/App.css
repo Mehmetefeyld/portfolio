@@ -22,6 +22,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--light-bg);
   color: var(--text-dark);
+  margin: 0;
+  padding: 0;
 }
 
 .App {
@@ -32,17 +34,23 @@ main {
   flex: 1;
   margin-left: 250px;
   padding: 2rem;
+  transition: margin-left 0.3s ease;
 }
 
 section {
   min-height: 100vh;
   padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  width: 100%;
 }
 
 .section-title {
@@ -50,6 +58,7 @@ section {
   color: var(--primary-color);
   margin-bottom: 3rem;
   text-align: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -65,6 +74,10 @@ section {
   .section-title {
     font-size: 2rem;
     margin-bottom: 2rem;
+  }
+
+  .container {
+    padding: 0 1rem;
   }
 }
 
@@ -104,6 +117,24 @@ section {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: transparent;
+  color: var(--text-dark);
 }
 
 /* Animasyon için IntersectionObserver kullanılacak */
@@ -156,12 +187,6 @@ ul li:hover {
   color: #f582ae; /* Açık pembe tonu */
 }
 
-/* Fade-in animasyonu tanımı */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* Navbar için arka plan ve konumlandırma */
 .navbar {
   background-color: #8bd3dd; /* Açık mavi */
@@ -170,12 +195,6 @@ ul li:hover {
   justify-content: center;
   gap: 20px;
   animation: fadeIn 1s ease-in-out;
-}
-body {
-  background-color: #fef6e4;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
 }
 
 /* Navbar linkleri */
@@ -190,18 +209,12 @@ body {
   color: #f582ae;
 }
 
-/* Footer için basit stil */
-.footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #f3d2c1;
-  color: #001858;
-}
 /* Bu boşluğu sola sabit navbar ile içerik arasında bırakır */
 .main-content {
   margin-left: 220px; /* navbar genişliği kadar boşluk */
   padding: 2rem;
 }
+
 /* Tüm sayfa zemin rengi */
 body {
   background-color: #fef6e4; /* sıcak açık krem ton */
