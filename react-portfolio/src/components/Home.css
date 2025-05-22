@@ -7,110 +7,80 @@ html {
   padding: 20px;
 }
 
+/* Ana sayfa bölümü stilleri */
 .home-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 0;
-  background-color: var(--light-bg);
-  position: relative;
-  width: 100%;
+  min-height: 100vh;                /* Minimum tam ekran yüksekliği */
+  display: flex;                    /* Flexbox kullanımı */
+  flex-direction: column;           /* Dikey hizalama */
+  justify-content: center;          /* Dikeyde ortala */
+  align-items: center;              /* Yatayda ortala */
+  padding: var(--container-padding); /* Kenar boşlukları */
+  text-align: center;               /* Metni ortala */
+  background-color: var(--light-bg); /* Arka plan rengi */
 }
 
-.home-content {
-  text-align: center;
-  max-width: 800px;
-  padding: 2rem;
-  width: 100%;
+/* Ana başlık stilleri */
+.home-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem); /* Responsive yazı boyutu */
+  color: var(--primary-color);           /* Yazı rengi */
+  margin-bottom: 1rem;                   /* Alt boşluk */
+  animation: fadeIn 1s ease-in-out;      /* Giriş animasyonu */
 }
 
-.home-section h1 {
-  font-size: 3.5rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  animation: fadeInUp 1s ease;
+/* Alt başlık stilleri */
+.home-subtitle {
+  font-size: clamp(1.2rem, 4vw, 2rem);   /* Responsive yazı boyutu */
+  color: var(--secondary-color);          /* Yazı rengi */
+  margin-bottom: 2rem;                    /* Alt boşluk */
+  animation: fadeIn 1s ease-in-out 0.3s;  /* Gecikmeli giriş animasyonu */
+  animation-fill-mode: both;              /* Animasyon başlangıç durumu */
 }
 
-.home-section .subtitle {
-  font-size: 1.5rem;
-  color: var(--secondary-color);
-  margin-bottom: 2rem;
-  animation: fadeInUp 1s ease 0.2s;
-  animation-fill-mode: both;
+/* CTA (Call to Action) buton stilleri */
+.cta-button {
+  padding: 1rem 2rem;                    /* İç boşluk */
+  font-size: clamp(1rem, 3vw, 1.2rem);   /* Responsive yazı boyutu */
+  background-color: var(--accent-color);  /* Arka plan rengi */
+  color: var(--text-light);              /* Yazı rengi */
+  border: none;                          /* Kenarlık yok */
+  border-radius: 5px;                    /* Köşe yuvarlaklığı */
+  cursor: pointer;                       /* İmleç stili */
+  transition: var(--transition);         /* Geçiş animasyonu */
+  text-decoration: none;                 /* Link altı çizgi yok */
+  animation: fadeIn 1s ease-in-out 0.6s; /* Gecikmeli giriş animasyonu */
+  animation-fill-mode: both;             /* Animasyon başlangıç durumu */
 }
 
-.cta-buttons {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  animation: fadeInUp 1s ease 0.4s;
-  animation-fill-mode: both;
+/* CTA buton hover efekti */
+.cta-button:hover {
+  transform: translateY(-3px);           /* Yukarı hareket */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+  background-color: #0873c5;            /* Koyu mavi hover rengi */
 }
 
-.primary-btn {
-  background-color: var(--accent-color);
-  color: var(--text-light);
-}
-
-.secondary-btn {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--accent-color);
-}
-
-.primary-btn:hover,
-.secondary-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Mobil cihazlar için responsive tasarım */
 @media (max-width: 768px) {
   .home-section {
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 2rem 1rem;
+    padding: var(--mobile-padding);     /* Mobil için daha küçük padding */
   }
-
-  .home-content {
-    text-align: left;
-    padding: 0;
-    margin: 0;
-    width: 100%;
+  
+  .home-title {
+    margin-bottom: 0.5rem;              /* Daha küçük alt boşluk */
   }
-
-  .home-section h1 {
-    font-size: 2.5rem;
-    text-align: left;
+  
+  .home-subtitle {
+    margin-bottom: 1.5rem;              /* Daha küçük alt boşluk */
   }
+}
 
-  .home-section .subtitle {
-    font-size: 1.2rem;
-    text-align: left;
+/* Giriş animasyonu tanımı */
+@keyframes fadeIn {
+  from {
+    opacity: 0;                         /* Başlangıçta görünmez */
+    transform: translateY(20px);        /* Aşağıdan yukarı hareket */
   }
-
-  .cta-buttons {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  .primary-btn,
-  .secondary-btn {
-    width: 100%;
-    text-align: center;
+  to {
+    opacity: 1;                         /* Tam görünür */
+    transform: translateY(0);           /* Normal pozisyon */
   }
 }

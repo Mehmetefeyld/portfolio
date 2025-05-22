@@ -1,71 +1,69 @@
+/* Tüm elementler için varsayılan stil sıfırlama */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Global değişkenler ve tema renkleri */
 :root {
-  --primary-color: #2d3436;
-  --secondary-color: #636e72;
-  --accent-color: #0984e3;
-  --text-light: #ffffff;
-  --text-dark: #2d3436;
-  --light-bg: #fef6e4;
-  --dark-bg: #2d3436;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
-  --container-padding: 2rem;
-  --mobile-padding: 1rem;
+  --primary-color: #2d3436;      /* Ana renk - koyu gri */
+  --secondary-color: #636e72;    /* İkincil renk - orta gri */
+  --accent-color: #0984e3;       /* Vurgu rengi - mavi */
+  --text-light: #ffffff;         /* Açık metin rengi - beyaz */
+  --text-dark: #2d3436;          /* Koyu metin rengi - koyu gri */
+  --light-bg: #fef6e4;          /* Açık arka plan rengi - krem */
+  --dark-bg: #2d3436;           /* Koyu arka plan rengi - koyu gri */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Standart gölge efekti */
+  --transition: all 0.3s ease;   /* Geçiş animasyonu */
+  --container-padding: 2rem;     /* Masaüstü için container padding */
+  --mobile-padding: 1rem;        /* Mobil için container padding */
 }
 
+/* HTML ve Body temel stilleri */
 html, body {
-  overflow-x: hidden;
-  width: 100%;
-  min-height: 100vh;
+  overflow-x: hidden;            /* Yatay kaydırmayı engelle */
+  width: 100%;                   /* Tam genişlik */
+  min-height: 100vh;            /* Minimum tam ekran yüksekliği */
 }
 
+/* Body genel stilleri */
 body {
-  font-family: 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--light-bg);
-  color: var(--text-dark);
-  line-height: 1.6;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;  /* Font ailesi */
+  -webkit-font-smoothing: antialiased;                      /* Font yumuşatma */
+  -moz-osx-font-smoothing: grayscale;                      /* Font yumuşatma */
+  background-color: var(--light-bg);                       /* Arka plan rengi */
+  color: var(--text-dark);                                 /* Yazı rengi */
+  line-height: 1.6;                                        /* Satır yüksekliği */
 }
 
+/* Ana uygulama container'ı */
 .App {
-  display: flex;
-  min-height: 100vh;
-  position: relative;
+  display: flex;                 /* Flexbox kullanımı */
+  min-height: 100vh;            /* Minimum tam ekran yüksekliği */
+  position: relative;           /* Göreceli konumlandırma */
 }
 
+/* Ana içerik alanı */
 main {
-  flex: 1;
-  padding: var(--container-padding);
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 1;                      /* Esnek büyüme */
+  padding: var(--container-padding);  /* Padding */
+  min-height: 100vh;            /* Minimum tam ekran yüksekliği */
+  width: 100%;                  /* Tam genişlik */
+  display: flex;                /* Flexbox kullanımı */
+  flex-direction: column;       /* Dikey hizalama */
+  align-items: center;          /* Yatayda ortala */
 }
 
-section {
-  min-height: 100vh;
-  padding: var(--container-padding) 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
+/* İçerik container'ı */
 .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;                  /* Tam genişlik */
+  max-width: 1200px;           /* Maksimum genişlik sınırı */
+  margin: 0 auto;              /* Otomatik kenar boşluğu ile ortalama */
+  padding: 0 var(--container-padding);  /* Yatay padding */
+  display: flex;                /* Flexbox kullanımı */
+  flex-direction: column;       /* Dikey hizalama */
+  align-items: center;          /* Yatayda ortala */
 }
 
 .section-title {

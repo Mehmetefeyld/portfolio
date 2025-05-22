@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -11,6 +13,18 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsOpen(false);
   };
+
+  const menuItems = [
+    { path: '/', text: 'Ana Sayfa', icon: 'fas fa-home' },
+    { path: '/about', text: 'Hakkımda', icon: 'fas fa-user' },
+    { path: '/contact', text: 'İletişim', icon: 'fas fa-envelope' }
+  ];
+
+  const socialLinks = [
+    { url: 'https://github.com/yourusername', icon: 'fab fa-github' },
+    { url: 'https://linkedin.com/in/yourusername', icon: 'fab fa-linkedin' },
+    { url: 'https://twitter.com/yourusername', icon: 'fab fa-twitter' }
+  ];
 
   return (
     <>
@@ -21,44 +35,39 @@ const Navbar = () => {
       </div>
       <nav className={`navbar ${isOpen ? 'active' : ''}`}>
         <div className="nav-container">
-          <a href="/" className="nav-logo">
-            Mehmet Efe
-          </a>
+          <div className="logo">
+            <Link to="/">
+              <img src="/logo.png" alt="Logo" />
+            </Link>
+          </div>
 
           <ul className="nav-menu">
-            <li>
-              <a href="#home" onClick={closeMenu}>
-                <i className="fas fa-home"></i>
-                Ana Sayfa
-              </a>
-            </li>
-            <li>
-              <a href="#about" onClick={closeMenu}>
-                <i className="fas fa-user"></i>
-                Hakkımda
-              </a>
-            </li>
-            <li>
-              <a href="#portfolio" onClick={closeMenu}>
-                <i className="fas fa-code"></i>
-                Projeler
-              </a>
-            </li>
-            <li>
-              <a href="#contact" onClick={closeMenu}>
-                <i className="fas fa-envelope"></i>
-                İletişim
-              </a>
-            </li>
+            {menuItems.map((item, index) => (
+              <li key={index} className="nav-item">
+                <Link
+                  to={item.path}
+                  className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                  onClick={closeMenu}
+                >
+                  <i className={item.icon}></i>
+                  <span>{item.text}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
 
           <div className="nav-social">
-            <a href="https://github.com/Mehmetefeyld" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-linkedin"></i>
-            </a>
+            {socialLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.url}
+                className="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className={link.icon}></i>
+              </a>
+            ))}
           </div>
         </div>
       </nav>

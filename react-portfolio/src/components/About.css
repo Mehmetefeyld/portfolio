@@ -1,38 +1,43 @@
+/* Hakkımda bölümü ana container */
 .about-section {
-  background-color: var(--light-bg);
-  padding: 6rem 0;
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: var(--container-padding);
+  background-color: var(--light-bg);  /* Arka plan rengi */
+  padding: 6rem 0;                    /* Dikey boşluk */
+  width: 100%;                        /* Tam genişlik */
+  position: relative;                 /* Göreceli konumlandırma */
+  display: flex;                      /* Flexbox kullanımı */
+  flex-direction: column;             /* Dikey hizalama */
+  align-items: center;                /* Yatayda ortala */
+  padding: var(--container-padding);  /* Kenar boşlukları */
 }
 
+/* Hakkımda içerik alanı */
 .about-content {
-  display: flex;
-  gap: 4rem;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  justify-content: center;
+  display: flex;                      /* Flexbox kullanımı */
+  gap: 4rem;                         /* Öğeler arası boşluk */
+  align-items: center;               /* Dikeyde ortala */
+  width: 100%;                       /* Tam genişlik */
+  max-width: 1200px;                 /* Maksimum genişlik */
+  justify-content: center;           /* Yatayda ortala */
 }
 
+/* Metin içerik alanı */
 .about-text {
-  flex: 2;
-  max-width: 800px;
-  text-align: center;
+  flex: 2;                           /* Esnek büyüme oranı */
+  max-width: 800px;                  /* Maksimum genişlik */
+  text-align: center;                /* Metni ortala */
 }
 
+/* Başlık alanı */
 .about-header {
-  margin-bottom: 2rem;
-  text-align: center;
+  margin-bottom: 2rem;               /* Alt boşluk */
+  text-align: center;                /* Metni ortala */
 }
 
+/* Alt başlık stilleri */
 .about-header h3 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);  /* Responsive yazı boyutu */
+  color: var(--primary-color);          /* Yazı rengi */
+  margin-bottom: 0.5rem;                /* Alt boşluk */
 }
 
 .subtitle {
@@ -47,28 +52,31 @@
   text-align: center;
 }
 
+/* Yetenekler grid sistemi */
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-  width: 100%;
-  place-items: center;
+  display: grid;                        /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Responsive grid */
+  gap: 1.5rem;                         /* Grid öğeleri arası boşluk */
+  margin-bottom: 3rem;                 /* Alt boşluk */
+  width: 100%;                         /* Tam genişlik */
+  place-items: center;                 /* Grid öğelerini ortala */
 }
 
+/* Yetenek kartı */
 .skill-card {
-  background: var(--text-light);
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: var(--box-shadow);
-  transition: var(--transition);
-  text-align: center;
-  width: 100%;
+  background: var(--text-light);       /* Arka plan rengi */
+  padding: 1.5rem;                     /* İç boşluk */
+  border-radius: 10px;                 /* Köşe yuvarlaklığı */
+  box-shadow: var(--box-shadow);       /* Gölge efekti */
+  transition: var(--transition);       /* Geçiş animasyonu */
+  text-align: center;                  /* Metni ortala */
+  width: 100%;                         /* Tam genişlik */
 }
 
+/* Yetenek kartı hover efekti */
 .skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);         /* Yukarı hareket */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* Daha belirgin gölge */
 }
 
 .skill-card i {

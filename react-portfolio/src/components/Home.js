@@ -3,15 +3,13 @@ import './Home.css';
 
 function Home() {
   return (
-    <section id="home" className="home-section">
-      <div className="container">
-        <div className="home-content">
-          <h1>Merhaba, Ben Mehmet Efe YILDIRAN</h1>
-          <p className="subtitle">Game Developer / Web Designer / Öğrenci</p>
-          <div className="cta-buttons">
-            <a href="#portfolio" className="btn primary-btn">Projelerimi Gör</a>
-            <a href="#contact" className="btn secondary-btn">İletişime Geç</a>
-          </div>
+    <section className="home-section">
+      <div className="home-content">
+        <h1>Mehmet Efe</h1>
+        <p className="subtitle">Full Stack Developer</p>
+        <div className="cta-buttons">
+          <a href="/about" className="btn primary-btn">Hakkımda</a>
+          <a href="/contact" className="btn secondary-btn">İletişim</a>
         </div>
       </div>
     </section>

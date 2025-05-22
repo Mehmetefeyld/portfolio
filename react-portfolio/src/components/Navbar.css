@@ -163,3 +163,97 @@
   }
 }
 
+/* Navbar ana container */
+.navbar {
+  width: 250px;                    /* Sabit genişlik */
+  height: 100vh;                   /* Tam ekran yüksekliği */
+  position: fixed;                 /* Sabit pozisyon */
+  left: 0;                        /* Sol kenara sabitle */
+  top: 0;                         /* Üst kenara sabitle */
+  background-color: var(--light-bg); /* Arka plan rengi */
+  padding: 2rem;                  /* İç boşluk */
+  box-shadow: var(--box-shadow);  /* Gölge efekti */
+  transition: var(--transition);  /* Geçiş animasyonu */
+  z-index: 1000;                 /* Üst katman */
+}
+
+/* Logo container */
+.logo {
+  display: flex;                  /* Flexbox kullanımı */
+  align-items: center;            /* Dikeyde ortala */
+  justify-content: center;        /* Yatayda ortala */
+  margin-bottom: 2rem;           /* Alt boşluk */
+}
+
+/* Logo resmi */
+.logo img {
+  width: 120px;                  /* Sabit genişlik */
+  height: auto;                  /* Otomatik yükseklik */
+  border-radius: 10px;          /* Köşe yuvarlaklığı */
+}
+
+/* Navigasyon menüsü */
+.nav-menu {
+  list-style: none;             /* Liste işareti yok */
+  padding: 0;                   /* İç boşluk yok */
+  margin: 0;                    /* Dış boşluk yok */
+}
+
+/* Menü öğeleri */
+.nav-item {
+  margin-bottom: 1rem;          /* Alt boşluk */
+}
+
+/* Menü linkleri */
+.nav-link {
+  display: flex;                /* Flexbox kullanımı */
+  align-items: center;          /* Dikeyde ortala */
+  color: var(--primary-color); /* Yazı rengi */
+  text-decoration: none;       /* Link altı çizgi yok */
+  font-size: 1.1rem;          /* Yazı boyutu */
+  padding: 0.5rem 1rem;       /* İç boşluk */
+  border-radius: 5px;         /* Köşe yuvarlaklığı */
+  transition: var(--transition); /* Geçiş animasyonu */
+}
+
+/* Menü linki hover efekti */
+.nav-link:hover {
+  background-color: var(--accent-color); /* Hover arka plan rengi */
+  color: var(--text-light);            /* Hover yazı rengi */
+  transform: translateX(5px);          /* Sağa hareket */
+}
+
+/* Aktif menü öğesi */
+.nav-link.active {
+  background-color: var(--accent-color); /* Aktif arka plan rengi */
+  color: var(--text-light);            /* Aktif yazı rengi */
+}
+
+/* Sosyal medya linkleri container */
+.social-links {
+  margin-top: auto;             /* Üstten otomatik boşluk */
+  display: flex;                /* Flexbox kullanımı */
+  gap: 1rem;                    /* Öğeler arası boşluk */
+  justify-content: center;      /* Yatayda ortala */
+}
+
+/* Sosyal medya ikonu */
+.social-icon {
+  color: var(--primary-color); /* İkon rengi */
+  font-size: 1.5rem;          /* İkon boyutu */
+  transition: var(--transition); /* Geçiş animasyonu */
+}
+
+/* Sosyal medya ikonu hover efekti */
+.social-icon:hover {
+  color: var(--accent-color);  /* Hover rengi */
+  transform: translateY(-3px); /* Yukarı hareket */
+}
+
+/* Mobil cihazlar için responsive tasarım */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;             /* Mobilde gizle */
+  }
+}
+

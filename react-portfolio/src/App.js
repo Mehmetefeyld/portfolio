@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css'; // varsayılan stil dosyan
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -36,18 +37,19 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {/* Sol sabit navbar */}
-      <Navbar />
-
-      {/* Navbar'la çakışmaması için sola margin veren ana içerik */}
-      <div className="main-content">
+    <Router>
+      <div className="App">
+        <Navbar />
         
-      <Home />
-      <About />
-      <Contact />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
       </div>
-    </div>
+    </Router>
   );
 }
 
