@@ -1,152 +1,184 @@
 .about-section {
   background-color: var(--light-bg);
   padding: 6rem 0;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--container-padding);
 }
 
 .about-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
   gap: 4rem;
-  align-items: start;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+}
+
+.about-text {
+  flex: 2;
+  max-width: 800px;
+  text-align: center;
 }
 
 .about-header {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .about-header h3 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   color: var(--secondary-color);
-  font-weight: 500;
 }
 
 .about-description {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--text-dark);
-  margin-bottom: 3rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
   margin-bottom: 3rem;
+  width: 100%;
+  place-items: center;
 }
 
 .skill-card {
   background: var(--text-light);
-  padding: 2rem;
-  border-radius: 15px;
+  padding: 1.5rem;
+  border-radius: 10px;
   box-shadow: var(--box-shadow);
   transition: var(--transition);
   text-align: center;
+  width: 100%;
 }
 
 .skill-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .skill-card i {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   color: var(--accent-color);
   margin-bottom: 1rem;
 }
 
 .skill-card h4 {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   margin-bottom: 0.5rem;
-  color: var(--primary-color);
-}
-
-.skill-card p {
-  color: var(--secondary-color);
 }
 
 .projects-section {
-  margin-top: 4rem;
+  margin-top: 3rem;
+  width: 100%;
+  text-align: center;
 }
 
 .projects-section h3 {
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   margin-bottom: 2rem;
   color: var(--primary-color);
+  text-align: center;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  place-items: center;
 }
 
 .project-card {
   background: var(--text-light);
-  padding: 2rem;
-  border-radius: 15px;
-  text-decoration: none;
-  color: var(--text-dark);
+  padding: 1.5rem;
+  border-radius: 10px;
   box-shadow: var(--box-shadow);
+  text-decoration: none;
+  color: inherit;
   transition: var(--transition);
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.project-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .project-content i {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   color: var(--accent-color);
   margin-bottom: 1rem;
 }
 
 .project-content h4 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  margin-bottom: 0.5rem;
 }
 
 .project-content p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   color: var(--secondary-color);
-  line-height: 1.6;
+  margin-top: auto;
 }
 
 .profile-section {
+  flex: 1;
   position: sticky;
-  top: 100px;
+  top: 2rem;
+  max-width: 300px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-image {
-  margin-bottom: 2rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .profile-image img {
   width: 100%;
-  border-radius: 20px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
   box-shadow: var(--box-shadow);
-  transition: var(--transition);
-}
-
-.profile-image img:hover {
-  transform: scale(1.05);
 }
 
 .social-links {
   display: flex;
-  justify-content: center;
   gap: 1.5rem;
+  justify-content: center;
 }
 
 .social-links a {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   color: var(--primary-color);
-  font-size: 1.5rem;
   transition: var(--transition);
 }
 
@@ -155,31 +187,166 @@
   transform: translateY(-3px);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .about-content {
-    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .profile-section {
-    position: static;
-    margin-top: 3rem;
-  }
-
-  .profile-image img {
-    max-width: 300px;
-    margin: 0 auto;
-    display: block;
+    max-width: 250px;
   }
 }
 
 @media (max-width: 768px) {
-  .about-header h3 {
-    font-size: 1.8rem;
+  .about-section {
+    align-items: center;
+    padding: var(--mobile-padding);
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .about-text {
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .about-header {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .about-description {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    place-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    place-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .skill-card,
+  .project-card {
+    text-align: center;
+    padding: 0.75rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .projects-section {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .projects-section h3 {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .profile-section {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    align-self: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .profile-image {
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .social-links {
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Tüm div'leri ortala */
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Tüm class'ları ortala */
+  [class] {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* Tüm ID'leri ortala */
+  [id] {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: var(--mobile-padding);
+    width: 95%;
+  }
+
+  .about-content {
+    gap: 1rem;
+    max-width: 95%;
+  }
+
+  .skill-card,
+  .project-card {
+    padding: 0.5rem;
+    width: 95%;
+  }
+
+  .social-links {
+    gap: 0.75rem;
+    width: 95%;
+  }
+
+  .profile-image {
+    max-width: 150px;
   }
 
   .skills-grid,
   .projects-grid {
-    grid-template-columns: 1fr;
+    max-width: 95%;
   }
 }
 

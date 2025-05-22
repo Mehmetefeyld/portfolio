@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --primary-color: #2d3436;
   --secondary-color: #636e72;
@@ -8,12 +14,14 @@
   --dark-bg: #2d3436;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
+  --container-padding: 2rem;
+  --mobile-padding: 1rem;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
 }
 
 body {
@@ -22,82 +30,230 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--light-bg);
   color: var(--text-dark);
-  min-height: 100vh;
+  line-height: 1.6;
 }
 
 .App {
   display: flex;
   min-height: 100vh;
+  position: relative;
 }
 
 main {
   flex: 1;
   margin-left: 250px;
-  padding: 2rem;
+  padding: var(--container-padding);
   transition: margin-left 0.3s ease;
+  min-height: 100vh;
+  width: calc(100% - 250px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 section {
   min-height: 100vh;
-  width: 100%;
-  padding: 6rem 0;
+  padding: var(--container-padding) 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  width: 100%;
 }
 
 .container {
-  max-width: 1200px;
   width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 var(--container-padding);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 12rem);
 }
 
 .section-title {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   color: var(--primary-color);
   margin-bottom: 2rem;
   text-align: center;
-  animation: fadeIn 1s ease-in-out;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  place-items: center;
+}
+
+.card {
+  background: var(--text-light);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  text-align: center;
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--light-bg);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
 }
 
 @media (max-width: 768px) {
+  :root {
+    --container-padding: 0.5rem;
+    --mobile-padding: 0.5rem;
+  }
+
   main {
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: var(--mobile-padding);
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar {
+    display: none;
   }
 
   section {
-    padding: 0;
-    align-items: flex-start;
-    justify-content: flex-start;
+    padding: var(--mobile-padding);
+    min-height: auto;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .container {
-    padding: 0;
-    margin: 0;
-    min-height: calc(100vh - 4rem);
-    align-items: flex-start;
-    justify-content: flex-start;
-    max-width: 100%;
+    padding: var(--mobile-padding);
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    text-align: left;
-    padding: 0 1rem;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    place-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .card {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  /* Tüm div'leri ortala */
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Tüm class'ları ortala */
+  [class] {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* Tüm ID'leri ortala */
+  [id] {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --mobile-padding: 0.35rem;
+  }
+
+  .container {
+    padding: var(--mobile-padding);
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: var(--mobile-padding);
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .grid {
+    max-width: 95%;
+  }
+
+  .card {
+    max-width: 95%;
+  }
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+.p-1 {
+  padding: 0.5rem;
+}
+
+.p-2 {
+  padding: 1rem;
+}
+
+.p-3 {
+  padding: 1.5rem;
 }
 
 .btn {
@@ -119,27 +275,6 @@ section {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  width: 100%;
-}
-
-.card {
-  background: var(--text-light);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: var(--box-shadow);
-  transition: var(--transition);
-  text-align: center;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
 @keyframes fadeIn {
   from { 
     opacity: 0; 
@@ -149,14 +284,6 @@ section {
     opacity: 1; 
     transform: translateY(0); 
   }
-}
-
-.footer {
-  width: 100%;
-  text-align: center;
-  padding: 2rem;
-  background-color: transparent;
-  color: var(--text-dark);
 }
 
 /* Liste öğeleri için yumuşak geçiş animasyonu */
@@ -217,16 +344,6 @@ h2 {
 }
 
 /* Navbar için arka plan ve konumlandırma */
-.navbar {
-  background-color: #8bd3dd; /* Açık mavi */
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  animation: fadeIn 1s ease-in-out;
-}
-
-/* Navbar linkleri */
 .navbar a {
   text-decoration: none;
   color: #001858;

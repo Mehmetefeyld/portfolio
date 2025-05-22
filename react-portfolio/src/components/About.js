@@ -87,7 +87,7 @@ function About() {
                   <div className="project-content">
                     <i className="fas fa-space-shuttle"></i>
                     <h4>Star Raiders</h4>
-                    <p>Uzay temalı bir macera oyunu. Unity ile geliştirilmiş, heyecan verici bir uzay savaşı deneyimi.</p>
+                    <p>Uzay temalı bir macera oyunu. Python ve Pygame ile geliştirilmiş, heyecan verici bir uzay savaşı deneyimi.</p>
                   </div>
                 </a>
               </div>
