@@ -1,7 +1,7 @@
 .about-section {
   background-color: var(--light-bg);
   padding: 6rem 0;
-  width: 100%;
+  width: 100vw;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,14 +13,14 @@
   display: flex;
   gap: 4rem;
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
+  width: 100vw;
+  max-width: none;
   justify-content: center;
 }
 
 .about-text {
   flex: 2;
-  max-width: 800px;
+  max-width: none;
   text-align: center;
 }
 
@@ -52,7 +52,7 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-bottom: 3rem;
-  width: 100%;
+  width: 100vw;
   place-items: center;
 }
 
@@ -99,7 +99,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  width: 100%;
+  width: 100vw;
   place-items: center;
 }
 
